@@ -2,13 +2,13 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { useTheme } from 'react-native-paper'
-import Login from '../../screens/auth_screen/Login'
-import Register from '../../screens/auth_screen/Register'
-import OtpVerification from '../../screens/auth_screen/OtpVerification'
-import InputOtp from '../../screens/auth_screen/InputOtp'
-import Splash from '../../screens/Startup/Splash'
+import Login from '../../pages/auth_pages/Login'
+import Register from '../../pages/auth_pages/Register'
+import OtpVerification from '../../pages/auth_pages/OtpVerification'
+import InputOtp from '../../pages/auth_pages/InputOtp'
+import Splash from '../../pages/Startup/Splash'
 
-export default function MainStack() {
+export default function PublicRouter() {
     const Stack = createNativeStackNavigator()
     const { colors, fonts } = useTheme()
     return (

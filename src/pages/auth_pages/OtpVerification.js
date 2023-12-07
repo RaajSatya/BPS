@@ -1,18 +1,39 @@
-import { StatusBar, View } from 'react-native'
-import React, { useState } from 'react'
-import { useTheme, Text, IconButton } from 'react-native-paper'
+import { StatusBar, StyleSheet, View } from 'react-native'
+import React, { useState, useRef } from 'react'
+import { useTheme, Text, Button, IconButton } from 'react-native-paper'
 import AppInputField from '../../components/general/AppInputField'
 import AppButton from '../../components/general/AppButton'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
-export default function InputOtp({ navigation }) {
+import OTPInputView from '@twotalltotems/react-native-otp-input'
+export default function OtpVerification({ navigation }) {
     const { colors, mainPadding } = useTheme()
     const [Phone, setPhone] = useState('9695949392')
-
-
+    const [code, setCode] = useState('123456')
     function onOtpVerificationHandler() {
-
+        navigation.navigate('InputOtp')
     }
+
+    const styles = StyleSheet.create({
+        borderStyleBase: {
+            width: 30,
+            height: 45
+        },
+
+        borderStyleHighLighted: {
+            borderColor: "#03DAC6",
+        },
+
+        underlineStyleBase: {
+            width: 30,
+            height: 45,
+            borderWidth: 0,
+            borderBottomWidth: 1,
+        },
+
+        underlineStyleHighLighted: {
+            borderColor: "#03DAC6",
+        },
+    });
 
     return (
         <View style={{ flex: 1, paddingHorizontal: mainPadding }} >
@@ -25,7 +46,8 @@ export default function InputOtp({ navigation }) {
             <View style={{ flex: 1, rowGap: mainPadding * 2, justifyContent: "center" }}>
                 <Text style={{ color: colors.primary }} variant='headlineLarge'>Otp Verification</Text>
                 <View style={{ rowGap: mainPadding }}>
-                    <Text style={{ color: colors.primary }} variant='bodySmall'>You have received a 6-digit OTP on  XXXXXXX149</Text>
+                    <Text style={{ color: colors.primary }} variant='bodySmall'>You will be notified with an OTP !!</Text>
+
                     <AppInputField
                         labelText={'Enter OTP here'}
                         LeftContent={<Text variant='bodyMedium' style={{ color: colors.background }}>+91</Text>}
@@ -33,13 +55,10 @@ export default function InputOtp({ navigation }) {
                         onChangeText={(val) => setPhone(val)}
                         keyboardType='phone-pad'
                     />
-                    <View style={{ rowGap: mainPadding, }}>
-                        <View style={{ flexDirection: 'row', justifyContent: "space-between", alignItems: 'center' }}>
-                            <Text style={{ color: colors.primary }} variant='bodySmall'>Didn't received the OTP ? Resend</Text>
-                            <Text style={{ color: colors.primary }} variant='bodySmall'> <MaterialCommunityIcons name='timer-outline' /> 120 sec</Text>
-                        </View>
-                        <Text style={{ color: colors.primary }} variant='bodySmall'>Change mobile number</Text>
-                    </View>
+
+                    {/* <Button mode='contained' onPress={clearText}>Clear</Button>
+                    <Button mode='contained' onPress={setText}>SetValue</Button> */}
+
                 </View>
             </View>
             <View style={{ flex: 1, rowGap: mainPadding, justifyContent: 'center' }}>

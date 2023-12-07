@@ -27,7 +27,7 @@ const Login = ({ navigation }) => {
     }
 
     return (
-        <View style={{ flex: 1, paddingHorizontal: mainPadding }} >
+        <ScrollView contentContainerStyle={{ flexGrow: 1, paddingHorizontal: mainPadding }} >
             {/* <LinearGradient colors={[colors.primary, colors.tertiary, colors.error]} style={StyleSheet.absoluteFillObject} /> */}
 
             {/* <Image blurRadius={mainPadding * 2}
@@ -36,7 +36,7 @@ const Login = ({ navigation }) => {
             /> */}
             {/* <MyAlert error={authError != null ? true : false} onDismiss={onDismissDialog} visible={visible} message={authError?.message} /> */}
 
-            <ScrollView contentContainerStyle={{ rowGap: mainPadding * 2, flex: 1, justifyContent: 'center' }}>
+            <ScrollView style={{}} contentContainerStyle={{ flexGrow: 1, rowGap: mainPadding * 2, justifyContent: 'center' }}>
                 <View style={{ alignSelf: 'center' }}>
                     <Text style={{ color: colors.primary }} variant='headlineLarge'>Login</Text>
                     <Text style={{ color: colors.primary }} variant='bodyMedium'>Access account</Text>
@@ -79,7 +79,7 @@ const Login = ({ navigation }) => {
 
             </ScrollView>
 
-        </View>
+        </ScrollView>
     )
 }
 

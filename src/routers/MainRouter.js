@@ -3,8 +3,8 @@ import React, { useContext, useEffect, useState } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
-import AuthStack from './stack/AuthStack';
-import MainStack from './stack/MainStack';
+import DashboardRouter from './route/DashboardRouter';
+import PublicRouter from './route/PublicRouter';
 import { AuthContext } from '../context/AuthContext';
 export default function MainRouter() {
     const { UserAuthInfo } = useContext(AuthContext)
@@ -34,7 +34,7 @@ export default function MainRouter() {
 
     return (
         <NavigationContainer>
-            {UserAuthInfo ? <AuthStack /> : <MainStack />}
+            {!UserAuthInfo ? <DashboardRouter /> : <PublicRouter />}
         </NavigationContainer>
     )
 }
