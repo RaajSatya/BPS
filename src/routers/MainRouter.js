@@ -6,6 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import DashboardRouter from './route/DashboardRouter';
 import PublicRouter from './route/PublicRouter';
 import { AuthContext } from '../context/AuthContext';
+import DriverRouter from './route/DriverRouter';
 export default function MainRouter() {
     const { UserAuthInfo } = useContext(AuthContext)
     // const { getPost, setuserPost } = useContext(PostContext)
@@ -34,7 +35,10 @@ export default function MainRouter() {
 
     return (
         <NavigationContainer>
-            {!UserAuthInfo ? <DashboardRouter /> : <PublicRouter />}
+            {UserAuthInfo ?
+                //  <DashboardRouter /> 
+                <DriverRouter />
+                : <PublicRouter />}
         </NavigationContainer>
     )
 }

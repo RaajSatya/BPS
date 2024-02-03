@@ -1,14 +1,14 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import Tracking from '../pages/dashboard_pages/drawer_pages/Tracking';
-import CustomDrawerContent from './CustomDrawerContent';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import { useTheme } from 'react-native-paper';
-import History from '../pages/dashboard_pages/drawer_pages/History';
-import Profile from '../pages/dashboard_pages/drawer_pages/Profile';
-import HelpSupport from '../pages/dashboard_pages/drawer_pages/HelpSupport';
-export default function DrawerStack() {
+import CustomDriverDrawerContent from './CustomDriverDrawerContent';
+import Tracking from '../../pages/driver_pages/drawer_pages/Tracking';
+import History from '../../pages/driver_pages/drawer_pages/History';
+import Profile from '../../pages/driver_pages/drawer_pages/Profile';
+import HelpSupport from '../../pages/driver_pages/drawer_pages/HelpSupport';
+export default function DriverDrawerStack() {
     const Drawer = createDrawerNavigator();
     const { mainPadding, colors, fonts } = useTheme()
     return (
@@ -26,7 +26,7 @@ export default function DrawerStack() {
                 headerTintColor: colors.primary,
                 unmountOnBlur: true
             }}
-            drawerContent={(props) => <CustomDrawerContent {...props} />}
+            drawerContent={(props) => <CustomDriverDrawerContent {...props} />}
         // initialRouteName='Profile'
         // backBehavior='initialRoute'
         >

@@ -1,21 +1,19 @@
 import React, { useContext, useEffect } from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { useTheme } from 'react-native-paper'
-import DrawerStack from '../../stacks/DrawerStack'
-import History from '../../pages/dashboard_pages/drawer_pages/History'
-import Profile from '../../pages/dashboard_pages/drawer_pages/Profile'
-import HelpSupport from '../../pages/dashboard_pages/drawer_pages/HelpSupport'
-import StartTracking from '../../pages/dashboard_pages/StartTracking'
-import EditProfile from '../../pages/dashboard_pages/EditProfile'
-import ChangePassword from '../../pages/dashboard_pages/ChangePassword'
-import BookServices from '../../pages/dashboard_pages/BookServices'
+import StartTracking from '../../pages/driver_pages/StartTracking'
+import EditProfile from '../../pages/driver_pages/EditProfile'
+import ChangePassword from '../../pages/driver_pages/ChangePassword'
+import BookServices from '../../pages/driver_pages/BookServices'
+import DriverDrawerStack from '../../stacks/driver_stack/DriverDrawerStack'
+import AvailableDelivery from '../../pages/driver_pages/drawer_pages/AvailableDelivery'
 
-export default function DashboardRouter() {
+export default function DriverRouter() {
     const Stack = createNativeStackNavigator()
     const { colors, fonts } = useTheme()
 
     return (
-        <Stack.Navigator initialRouteName='AppDrawer' screenOptions={{
+        <Stack.Navigator initialRouteName='DriverAppDrawer' screenOptions={{
             // contentStyle: { backgroundColor: colors.background },
             statusBarTranslucent: true,
             statusBarStyle: 'dark',
@@ -29,11 +27,13 @@ export default function DashboardRouter() {
             // headerTintColor: colors.primary
             // headerShown: false
         }}>
-            <Stack.Screen name='AppDrawer' options={{ headerShown: false }} component={DrawerStack} />
+            <Stack.Screen name='DriverAppDrawer' options={{ headerShown: false }} component={DriverDrawerStack} />
             <Stack.Screen name='StartTracking' options={{ headerShown: false }} component={StartTracking} />
             <Stack.Screen name='EditProfile' options={{ headerShown: false }} component={EditProfile} />
             <Stack.Screen name='ChangePassword' options={{ headerShown: false }} component={ChangePassword} />
             <Stack.Screen name='BookServices' options={{ headerShown: false }} component={BookServices} />
+
+            <Stack.Screen name='AvailableDelivery' options={{ headerShown: false }} component={AvailableDelivery} />
 
         </Stack.Navigator>
     )

@@ -10,6 +10,7 @@ export function AuthProvider({ children }) {
 
     }
     function userSignIn(email, password) {
+        setUserAuthInfo(true)
         // setsigninLoading(true)
         // firebase.auth().signInWithEmailAndPassword(email, password)
         //     .then((res) => {
@@ -20,6 +21,7 @@ export function AuthProvider({ children }) {
         //     })
     }
     async function userLogout() {
+        setUserAuthInfo(false)
         // setLogoutLoading(true)
         // try {
         //     await messaging().deleteToken().then(async () => {
@@ -108,7 +110,10 @@ export function AuthProvider({ children }) {
 
     return (
         <AuthContext.Provider value={{
-            UserAuthInfo
+            UserAuthInfo,
+            setUserAuthInfo,
+            userSignIn,
+            userLogout
         }}>
             {children}
         </AuthContext.Provider>

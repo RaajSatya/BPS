@@ -1,18 +1,23 @@
 import { StatusBar, StyleSheet, View } from 'react-native'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useTheme, Text, IconButton } from 'react-native-paper'
 import AppInputField from '../../components/general/AppInputField'
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 import AppButton from '../../components/general/AppButton'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
+import { AuthContext } from '../../context/AuthContext'
 export default function InputOtp({ navigation }) {
+    const { UserAuthInfo,
+        setUserAuthInfo,
+        userSignIn,
+        userLogout } = useContext(AuthContext)
     const { colors, mainPadding } = useTheme()
     const [Phone, setPhone] = useState('9695949392')
     const [pin, setPin] = useState('');
 
     function onOtpVerificationHandler() {
-
+        userSignIn()
     }
 
     const styles = StyleSheet.create({

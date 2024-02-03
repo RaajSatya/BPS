@@ -17,7 +17,7 @@ export default function Tracking() {
 
     return (
         <View style={{ flex: 1, rowGap: mainPadding }}>
-            <ImageBackground style={{ flex: 0.9, rowGap: mainPadding, paddingTop: StatusBar.currentHeight, paddingHorizontal: mainPadding }} source={require('../../../assets/images/icons/Rectangle1.png')}>
+            <ImageBackground style={{ flex: 1, rowGap: mainPadding, paddingTop: StatusBar.currentHeight, paddingHorizontal: mainPadding }} source={require('../../../assets/images/icons/Rectangle1.png')}>
                 <View style={{ flexDirection: 'row', justifyContent: "space-between", alignItems: 'center' }}>
                     <MaterialCommunityIcons size={mainPadding}
                         style={{ margin: 0 }}
@@ -31,28 +31,31 @@ export default function Tracking() {
                 <View style={{ rowGap: mainPadding * 2, alignItems: 'center' }}>
                     <View style={{ alignItems: 'center', rowGap: mainPadding }}>
                         <Text style={{ color: colors.background }} variant='bodyMedium'>Hello Sooraj,</Text>
-                        <Text style={{ color: colors.background }} variant='titleLarge'>Track your shipment</Text>
+                        <Text style={{ color: colors.background }} variant='titleLarge'>Deliver on Time</Text>
+                        <Text style={{ color: colors.background }} variant='bodyMedium'> and get Great Rewards</Text>
                     </View>
                     <View style={{ rowGap: mainPadding, alignItems: 'center' }}>
-                        <Text variant='bodyMedium' style={{ color: colors.background }}>Please enter your tracking number</Text>
-                        <AppInputField
-                            value={TrackingNumber}
-                            onChangeText={(val) => setTrackingNumber(val)}
-                            BackGroundStyle={{
-                                backgroundColor: colors.background,
-                                width: widthPercentageToDP(60),
-                                height: heightPercentageToDP(6)
-                            }}
-                            InputStyle={{
-                                color: colors.primary
-                            }}
-                        />
-                        <AppButton
-                            label={'Start Tracking'}
-                            ButtonStyle={{ width: widthPercentageToDP(60) }}
-                            ButtonContentStyle={{ paddingVertical: heightPercentageToDP(0.5) }}
-                            onPress={onStartTrackingHandler}
-                        />
+                        <Text variant='bodyMedium' style={{ color: colors.background }}>Showing deliveries at your preferred Location</Text>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: 'center' }}>
+                            <IconButton iconColor={colors.error} icon={'map-marker'} />
+                            <Text variant='bodyMedium' style={{ color: colors.background }}>C-32, F block, Sector 40, Noida</Text>
+                            <IconButton iconColor={colors.background} icon={'arrow-down'} />
+                        </View>
+                        <View style={{ columnGap: mainPadding, flexDirection: "row", justifyContent: "space-evenly", alignItems: "center" }}>
+                            <AppButton
+                                label={'Live Location'}
+                                ButtonStyle={{ width: widthPercentageToDP(40) }}
+                                ButtonContentStyle={{ paddingVertical: heightPercentageToDP(0.5) }}
+                                onPress={onStartTrackingHandler}
+                            />
+                            <AppButton
+                                label={'Change Location'}
+                                ButtonStyle={{ width: widthPercentageToDP(40) }}
+                                ButtonContentStyle={{ paddingVertical: heightPercentageToDP(0.5) }}
+                                onPress={onStartTrackingHandler}
+                            />
+                        </View>
+
                     </View>
                 </View>
             </ImageBackground>
@@ -62,8 +65,8 @@ export default function Tracking() {
                 source={require('../../../assets/background/Group.png')}
                 style={{ flex: 1, paddingHorizontal: mainPadding, justifyContent: 'center' }}>
                 <AppButton
-                    label={'Book Now'}
-                    onPress={() => navigation.navigate('BookServices')}
+                    label={'5 Deliveries Available'}
+                    onPress={() => navigation.navigate('AvailableDelivery')}
                     ButtonStyle={{ marginTop: mainPadding * 3 }}
                 />
             </ImageBackground>

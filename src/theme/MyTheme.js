@@ -64,10 +64,10 @@ export const MaterialLightTheme = {
         },
         "bodySmall": {
             "fontFamily": "Poppins",
-            "fontSize": 12,
-            "fontWeight": "400",
+            "fontSize": hp(1.5),   //
+            "fontWeight": "600",
             "letterSpacing": 0.4,
-            "lineHeight": 18
+            "lineHeight": 18.18
         },
         "default": {
             "fontFamily": "sans-serif",
@@ -104,8 +104,8 @@ export const MaterialLightTheme = {
         },
         "headlineMedium": {
             "fontFamily": "sans-serif",
-            "fontSize": 28,
-            "fontWeight": "400",
+            "fontSize": hp(4),
+            "fontWeight": "700",
             "letterSpacing": 0,
             "lineHeight": 36
         },
@@ -133,10 +133,10 @@ export const MaterialLightTheme = {
         },
         "labelSmall": {
             "fontFamily": "sans-serif-medium",
-            "fontSize": 10,
+            "fontSize": hp(1.3),
             "fontWeight": "500",
             "letterSpacing": 0.5,
-            "lineHeight": 16
+            "lineHeight": 17
         },
         "titleLarge": {
             "fontFamily": "sans-serif",

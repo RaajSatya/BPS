@@ -8,7 +8,7 @@ import AppButton from '../../components/general/AppButton';
 import SocialLoginButton from '../../components/general/SocialLoginButton';
 import AppInputField from '../../components/general/AppInputField';
 const Login = ({ navigation }) => {
-    const { LoginLoading, userLogin } = useContext(AuthContext)
+    const { LoginLoading, userSignIn } = useContext(AuthContext)
     const { colors, fonts, radius, roundness, mainPadding } = useTheme()
     const [Phone, setPhone] = useState('9695949392')
     const [Password, setPassword] = useState('Fake@123')
@@ -21,8 +21,10 @@ const Login = ({ navigation }) => {
                 ToastAndroid.CENTER,
             );
         } else {
-            navigation.navigate('OtpVerification')
-            // userLogin(Phone, Password)
+            userSignIn()
+            // if admin navigate to  OtpVerification
+            // navigation.navigate('OtpVerification')
+
         }
     }
 
