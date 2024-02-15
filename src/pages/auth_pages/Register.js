@@ -13,7 +13,7 @@ export default function Register() {
     const { userRegister, RegisterLoading } = useContext(AuthContext)
     const navigation = useNavigation()
 
-    const { colors, fonts, mainPadding } = useTheme()
+    const { colors, fonts, spacing } = useTheme()
     const [Fullname, setFullname] = useState('SatyaXcode')
     const [Email, setEmail] = useState('SatyaXcode@gmail.com')
     const [MobileNumber, setMobileNumber] = useState('9695949392')
@@ -34,7 +34,7 @@ export default function Register() {
     }
 
     return (
-        <ScrollView contentContainerStyle={{ paddingHorizontal: mainPadding }} >
+        <ScrollView contentContainerStyle={{ paddingHorizontal: spacing.sm }} >
             <IconButton icon={'arrow-left'}
                 iconColor={colors.primary}
                 onPress={() => navigation.goBack()}
@@ -42,7 +42,7 @@ export default function Register() {
                 style={{ margin: 0, padding: 0, marginTop: StatusBar.currentHeight }}
             />
             <ScrollView style={{ flex: 1 }} contentContainerStyle={{ flex: 1, justifyContent: 'center' }}>
-                <View style={{ rowGap: mainPadding }}>
+                <View style={{ rowGap: spacing.sm }}>
                     <View style={{ alignSelf: 'center' }}>
                         <Text style={{ color: colors.primary }} variant='headlineLarge'>Register</Text>
                         <Text style={{ color: colors.primary }} variant='bodyMedium'>Create an account</Text>
@@ -81,7 +81,7 @@ export default function Register() {
                         onChangeText={(val) => setConfirmPassword(val)}
                         secureTextEntry={true}
                     />
-                    <View style={{ marginTop: heightPercentageToDP(1), rowGap: mainPadding, justifyContent: 'center' }}>
+                    <View style={{ marginTop: heightPercentageToDP(1), rowGap: spacing.sm, justifyContent: 'center' }}>
                         <AppButton
                             label={'Register'}
                             onPress={onRegisterHandler}

@@ -6,7 +6,7 @@ import { DrawerActions, useNavigation } from '@react-navigation/native'
 import { he } from 'date-fns/locale'
 
 export default function AppHeader({ onPress }) {
-    const { mainPadding, colors, radius } = useTheme()
+    const { colors } = useTheme()
     const navigation = useNavigation()
 
     return (

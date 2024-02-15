@@ -8,7 +8,7 @@ import AppButton from '../../../components/general/AppButton'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
 export default function Tracking() {
     const navigation = useNavigation()
-    const { mainPadding, colors } = useTheme()
+    const { spacing, colors } = useTheme()
     const [TrackingNumber, setTrackingNumber] = useState('#KAHSF673')
 
     function onStartTrackingHandler() {
@@ -16,24 +16,24 @@ export default function Tracking() {
     }
 
     return (
-        <View style={{ flex: 1, rowGap: mainPadding }}>
-            <ImageBackground style={{ flex: 0.9, rowGap: mainPadding, paddingTop: StatusBar.currentHeight, paddingHorizontal: mainPadding }} source={require('../../../assets/images/icons/Rectangle1.png')}>
+        <View style={{ flex: 1, rowGap: spacing.sm }}>
+            <ImageBackground style={{ flex: 0.9, rowGap: spacing.sm, paddingTop: StatusBar.currentHeight, paddingHorizontal: spacing.sm }} source={require('../../../assets/images/icons/Rectangle1.png')}>
                 <View style={{ flexDirection: 'row', justifyContent: "space-between", alignItems: 'center' }}>
-                    <MaterialCommunityIcons size={mainPadding}
+                    <MaterialCommunityIcons size={spacing.sm}
                         style={{ margin: 0 }}
                         name={'menu'}
                         color={colors.background}
                         onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
                     />
                     <Text style={{ color: colors.background, fontWeight: '800' }} variant='titleLarge'>Bharat</Text>
-                    <Avatar.Image size={mainPadding + 10} source={require('../../../assets/images/icons/head.png')} />
+                    <Avatar.Image size={spacing.sm + 10} source={require('../../../assets/images/icons/head.png')} />
                 </View>
-                <View style={{ rowGap: mainPadding * 2, alignItems: 'center' }}>
-                    <View style={{ alignItems: 'center', rowGap: mainPadding }}>
+                <View style={{ rowGap: spacing.sm * 2, alignItems: 'center' }}>
+                    <View style={{ alignItems: 'center', rowGap: spacing.sm }}>
                         <Text style={{ color: colors.background }} variant='bodyMedium'>Hello Sooraj,</Text>
                         <Text style={{ color: colors.background }} variant='titleLarge'>Track your shipment</Text>
                     </View>
-                    <View style={{ rowGap: mainPadding, alignItems: 'center' }}>
+                    <View style={{ rowGap: spacing.sm, alignItems: 'center' }}>
                         <Text variant='bodyMedium' style={{ color: colors.background }}>Please enter your tracking number</Text>
                         <AppInputField
                             value={TrackingNumber}
@@ -60,11 +60,11 @@ export default function Tracking() {
             <ImageBackground
                 resizeMode='contain'
                 source={require('../../../assets/background/Group.png')}
-                style={{ flex: 1, paddingHorizontal: mainPadding, justifyContent: 'center' }}>
+                style={{ flex: 1, paddingHorizontal: spacing.sm, justifyContent: 'center' }}>
                 <AppButton
                     label={'Book Now'}
                     onPress={() => navigation.navigate('BookServices')}
-                    ButtonStyle={{ marginTop: mainPadding * 3 }}
+                    ButtonStyle={{ marginTop: spacing.sm * 3 }}
                 />
             </ImageBackground>
 

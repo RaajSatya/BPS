@@ -4,12 +4,12 @@ import { TouchableRipple, useTheme } from 'react-native-paper'
 import { widthPercentageToDP } from 'react-native-responsive-screen'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 export default function SocialLoginButton({ iconName, onPress }) {
-    const { roundness, radius, colors } = useTheme()
+    const { roundness, colors } = useTheme()
     return (
         <TouchableRipple style={{
             width: widthPercentageToDP(25),
             padding: 8, backgroundColor: colors.primary,
-            borderRadius: radius
+            borderRadius: roundness
         }}
             onPress={onPress}
         >

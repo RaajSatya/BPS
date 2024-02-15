@@ -3,13 +3,13 @@ import { Alert, Modal, StyleSheet, Text, Pressable, View, SafeAreaView } from 'r
 import { useTheme } from 'react-native-paper';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 const MyBottomSheet = ({ children, sheetHeight, setModalVisible, modalVisible }) => {
-    const { roundness, colors, mainPadding } = useTheme()
+    const { roundness, colors, spacing } = useTheme()
 
     const styles = StyleSheet.create({
         modalView: {
-            padding: mainPadding,
-            borderTopLeftRadius: mainPadding * roundness,
-            borderTopRightRadius: mainPadding * roundness,
+            padding: spacing.sm,
+            borderTopLeftRadius: spacing.sm * roundness,
+            borderTopRightRadius: spacing.sm * roundness,
             backgroundColor: colors.surfaceVariant,
             justifyContent: 'flex-end',
             height: sheetHeight,

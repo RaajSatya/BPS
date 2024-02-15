@@ -6,7 +6,7 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function Splash() {
     const navigation = useNavigation()
-    const { colors, mainPadding } = useTheme()
+    const { colors, spacing } = useTheme()
 
     function onNextPressHandler() {
         navigation.navigate('Login')
@@ -38,9 +38,9 @@ export default function Splash() {
                 source={require('../../assets/background/Ellipses.png')}
                 style={{
                     flex: 1.1,
-                    padding: mainPadding,
+                    padding: spacing.sm,
                     justifyContent: 'center',
-                    rowGap: mainPadding,
+                    rowGap: spacing.sm,
                 }}>
 
                 <Text

@@ -9,9 +9,9 @@ import AppHeader from '../../components/general/AppHeader'
 
 export default function BookServices() {
     const navigation = useNavigation()
-    const { mainPadding, colors } = useTheme()
+    const { spacing, colors } = useTheme()
     return (
-        <View style={{ flex: 1, rowGap: mainPadding, paddingHorizontal: mainPadding }}>
+        <View style={{ flex: 1, rowGap: spacing.sm, paddingHorizontal: spacing.sm }}>
             {/* <AppHeader onPress={() => navigation.goBack()} /> */}
             <IconButton icon={'arrow-left'}
                 iconColor={colors.primary}
@@ -19,7 +19,7 @@ export default function BookServices() {
                 mode='contained'
                 style={{ marginTop: StatusBar.currentHeight, margin: 0, padding: 0 }}
             />
-            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: mainPadding, rowGap: mainPadding }}>
+            <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={{ paddingBottom: spacing.sm, rowGap: spacing.sm }}>
                 <Text style={{ textAlign: "center", color: colors.primary }} variant='headlineMedium'>Book Services</Text>
                 {/* <Image style={{ alignSelf: 'center' }} source={require('../../assets/images/icons/Image.png')} /> */}
                 <AppInputField
@@ -38,7 +38,7 @@ export default function BookServices() {
                     labelText={'Pickup Location'}
                     value={'Locality Street Colony'}
                 />
-                <View style={{ flexDirection: 'row', columnGap: mainPadding }}>
+                <View style={{ flexDirection: 'row', columnGap: spacing.sm }}>
                     <AppInputField
                         containerStyle={{ flex: 1 }}
                         BackGroundStyle={{ width: '100%' }}
@@ -51,7 +51,7 @@ export default function BookServices() {
                         value={'Ghazipur'}
                     />
                 </View>
-                <View style={{ columnGap: mainPadding, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                <View style={{ columnGap: spacing.sm, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <AppInputField
                         containerStyle={{ flex: 1 }}
                         labelText={'State'}
@@ -84,7 +84,7 @@ export default function BookServices() {
                         labelText={'Drop Location'}
                         value={'Locality Street Colony'}
                     />
-                    <View style={{ columnGap: mainPadding, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <View style={{ columnGap: spacing.sm, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                         <AppInputField
                             containerStyle={{ flex: 1 }}
                             labelText={'City/Town'}
@@ -96,7 +96,7 @@ export default function BookServices() {
                             value={'Ghazipur'}
                         />
                     </View>
-                    <View style={{ columnGap: mainPadding, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <View style={{ columnGap: spacing.sm, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                         <AppInputField
                             containerStyle={{ flex: 1 }}
                             labelText={'State'}

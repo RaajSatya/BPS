@@ -5,15 +5,15 @@ import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsi
 import { DrawerActions, useNavigation } from '@react-navigation/native'
 import { he } from 'date-fns/locale'
 
-export default function DriverAppBar({ onPress }) {
-    const { mainPadding, colors, radius } = useTheme()
+export default function DriverAppBar({ }) {
+    const { colors } = useTheme()
     const navigation = useNavigation()
 
     return (
         <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'space-between', marginTop: StatusBar.currentHeight }}>
             <IconButton icon={'arrow-left'}
                 iconColor={colors.primary}
-                onPress={onPress}
+                onPress={() => navigation.goBack()}
                 mode='contained'
                 style={{ margin: 0, padding: 0 }}
             />

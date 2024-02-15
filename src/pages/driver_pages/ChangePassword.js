@@ -9,9 +9,9 @@ import AppHeader from '../../components/general/AppHeader'
 
 export default function ChangePassword() {
     const navigation = useNavigation()
-    const { mainPadding, colors } = useTheme()
+    const { spacing, colors } = useTheme()
     return (
-        <View style={{ flex: 1, rowGap: mainPadding, paddingHorizontal: mainPadding }}>
+        <View style={{ flex: 1, rowGap: spacing.sm, paddingHorizontal: spacing.sm }}>
             {/* <AppHeader onPress={() => navigation.goBack()} /> */}
             <IconButton icon={'arrow-left'}
                 iconColor={colors.primary}
@@ -19,7 +19,7 @@ export default function ChangePassword() {
                 mode='contained'
                 style={{ marginTop: StatusBar.currentHeight, margin: 0, padding: 0 }}
             />
-            <View style={{ rowGap: mainPadding }}>
+            <View style={{ rowGap: spacing.sm }}>
                 <Text style={{ textAlign: "center", color: colors.primary }} variant='headlineMedium'>Change Password</Text>
                 {/* <Image style={{ alignSelf: 'center' }} source={require('../../assets/images/icons/Image.png')} /> */}
                 <AppInputField

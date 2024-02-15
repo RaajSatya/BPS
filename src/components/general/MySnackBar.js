@@ -3,7 +3,7 @@ import React from 'react'
 import { IconButton, Menu, Snackbar, useTheme } from 'react-native-paper'
 
 export default function MySnackBar({ children, onDismissSnackBar, visible }) {
-    const { colors, fonts, mainPadding } = useTheme()
+    const { colors, spacing } = useTheme()
     return (
         <Snackbar
             visible={visible}
@@ -17,7 +17,7 @@ export default function MySnackBar({ children, onDismissSnackBar, visible }) {
             style={{
                 zIndex: 1,
                 backgroundColor: colors.background,
-                borderRadius: mainPadding
+                borderRadius: spacing.sm
             }}
         >
             <View>

@@ -5,12 +5,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export const AuthContext = createContext()
 export function AuthProvider({ children }) {
-    const [UserAuthInfo, setUserAuthInfo] = useState(false)
+    const [UserAuthInfo, setUserAuthInfo] = useState(null)
     function userSignUp(name, email, password, phone, deviceToken) {
 
     }
-    function userSignIn(email, password) {
-        setUserAuthInfo(true)
+    function userSignIn(rol) {
+        setUserAuthInfo(rol)
         // setsigninLoading(true)
         // firebase.auth().signInWithEmailAndPassword(email, password)
         //     .then((res) => {
@@ -21,7 +21,7 @@ export function AuthProvider({ children }) {
         //     })
     }
     async function userLogout() {
-        setUserAuthInfo(false)
+        setUserAuthInfo(null)
         // setLogoutLoading(true)
         // try {
         //     await messaging().deleteToken().then(async () => {

@@ -10,7 +10,7 @@ import Profile from '../../pages/driver_pages/drawer_pages/Profile';
 import HelpSupport from '../../pages/driver_pages/drawer_pages/HelpSupport';
 export default function DriverDrawerStack() {
     const Drawer = createDrawerNavigator();
-    const { mainPadding, colors, fonts } = useTheme()
+    const { spacing, colors, fonts } = useTheme()
     return (
         <Drawer.Navigator
             // defaultStatus='open'
@@ -32,22 +32,22 @@ export default function DriverDrawerStack() {
         >
             <Drawer.Screen name="Tracking" options={{
                 headerShown: false,
-                drawerIcon: () => <MaterialCommunityIcons size={mainPadding} name='map-marker-path' />,
+                drawerIcon: () => <MaterialCommunityIcons size={spacing.sm} name='map-marker-path' />,
                 // drawerLabelStyle: { color: colors.background }
             }} component={Tracking} />
             <Drawer.Screen name="History" options={{
                 headerShown: false,
-                drawerIcon: () => <MaterialCommunityIcons color={colors.background} size={mainPadding} name='history' />,
+                drawerIcon: () => <MaterialCommunityIcons color={colors.background} size={spacing.sm} name='history' />,
                 // drawerLabelStyle: { color: colors.background }
             }} component={History} />
             <Drawer.Screen name="Profile" options={{
                 headerShown: false,
-                drawerIcon: () => <MaterialCommunityIcons color={colors.background} size={mainPadding} name='account-outline' />,
+                drawerIcon: () => <MaterialCommunityIcons color={colors.background} size={spacing.sm} name='account-outline' />,
                 // drawerLabelStyle: { color: colors.background }
             }} component={Profile} />
             <Drawer.Screen name="HelpSupport" options={{
                 headerShown: false,
-                drawerIcon: () => <MaterialCommunityIcons color={colors.background} size={mainPadding} name='help-circle-outline' />,
+                drawerIcon: () => <MaterialCommunityIcons color={colors.background} size={spacing.sm} name='help-circle-outline' />,
                 // drawerLabelStyle: { color: colors.background }
             }} component={HelpSupport} />
         </Drawer.Navigator>

@@ -6,7 +6,11 @@ import EditProfile from '../../pages/driver_pages/EditProfile'
 import ChangePassword from '../../pages/driver_pages/ChangePassword'
 import BookServices from '../../pages/driver_pages/BookServices'
 import DriverDrawerStack from '../../stacks/driver_stack/DriverDrawerStack'
-import AvailableDelivery from '../../pages/driver_pages/drawer_pages/AvailableDelivery'
+import BookingDetails from '../../pages/driver_pages/BookingDetails'
+import AvailableDelivery from '../../pages/driver_pages/AvailableDelivery'
+import StartPickup from '../../pages/driver_pages/StartPickup'
+import PickedUpDetails from '../../pages/driver_pages/PickedUpDetails'
+import MapDetails from '../../pages/driver_pages/MapDetails'
 
 export default function DriverRouter() {
     const Stack = createNativeStackNavigator()
@@ -32,8 +36,11 @@ export default function DriverRouter() {
             <Stack.Screen name='EditProfile' options={{ headerShown: false }} component={EditProfile} />
             <Stack.Screen name='ChangePassword' options={{ headerShown: false }} component={ChangePassword} />
             <Stack.Screen name='BookServices' options={{ headerShown: false }} component={BookServices} />
-
             <Stack.Screen name='AvailableDelivery' options={{ headerShown: false }} component={AvailableDelivery} />
+            <Stack.Screen name='BookingDetails' options={{ headerShown: false }} component={BookingDetails} />
+            <Stack.Screen name='StartPickup' options={{ headerShown: false }} component={StartPickup} />
+            <Stack.Screen name='PickedUpDetails' options={{ headerShown: false }} component={PickedUpDetails} />
+            <Stack.Screen name='MapDetails' options={{ headerShown: false }} component={MapDetails} />
 
         </Stack.Navigator>
     )

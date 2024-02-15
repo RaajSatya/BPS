@@ -4,19 +4,19 @@ import { IconButton, Text, useTheme } from 'react-native-paper'
 import { widthPercentageToDP } from 'react-native-responsive-screen'
 
 export default function AppInputField({ containerStyle, InputStyle, BackGroundStyle, labelText, secureTextEntry, keyboardType, LeftContent, RightContent, placeholder, value, onChangeText }) {
-    const { colors, mainPadding, fonts, radius } = useTheme()
+    const { colors, spacing, fonts, roundness } = useTheme()
     return (
-        <View style={[{ rowGap: mainPadding }, containerStyle]}>
+        <View style={[{ rowGap: spacing.sm }, containerStyle]}>
             {labelText ? <Text style={{ color: colors.primary }} variant='bodyMedium'>{labelText}</Text> : null}
             <View
                 style={[{
                     backgroundColor: colors.primary,
-                    borderRadius: radius,
+                    borderRadius: roundness,
                     paddingHorizontal: widthPercentageToDP(3),
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: 'space-between',
-                    columnGap: 5
+                    columnGap: spacing.sm
                 }, BackGroundStyle]}
             >
                 {LeftContent}

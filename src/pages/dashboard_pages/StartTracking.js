@@ -8,7 +8,7 @@ import StepIndicator from 'react-native-step-indicator';
 import AppHeader from '../../components/general/AppHeader'
 import { useNavigation } from '@react-navigation/native'
 export default function StartTracking() {
-    const { mainPadding, colors, radius } = useTheme()
+    const { spacing, colors, radius } = useTheme()
     const navigation = useNavigation()
     const [currentPosition, setcurrentPosition] = useState(1)
 
@@ -22,17 +22,17 @@ export default function StartTracking() {
     }, [])
 
     return (
-        <View style={{ flex: 1, rowGap: mainPadding, paddingHorizontal: mainPadding }}>
+        <View style={{ flex: 1, rowGap: spacing.sm, paddingHorizontal: spacing.sm }}>
 
             <AppHeader onPress={() => navigation.goBack()} />
 
             <View style={{ flex: 1 }}>
-                <View style={{ rowGap: mainPadding - radius }}>
+                <View style={{ rowGap: spacing.sm - radius }}>
                     <Text style={{ fontWeight: "800", color: colors.primary }} variant='bodySmall'>Tracking</Text>
-                    <LinearGradient colors={['#3770B5', '#748DC6']} style={{ borderRadius: radius, padding: mainPadding, rowGap: mainPadding }}>
+                    <LinearGradient colors={['#3770B5', '#748DC6']} style={{ borderRadius: radius, padding: spacing.sm, rowGap: spacing.sm }}>
                         <Text variant='bodySmall' style={{ color: colors.background }}>Majalengka,indonesia</Text>
                         <Text variant='bodySmall' style={{ color: colors.background }}>No,resi 2356589642</Text>
-                        <View style={{ backgroundColor: colors.primary, padding: mainPadding / 2, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
+                        <View style={{ backgroundColor: colors.primary, padding: spacing.sm / 2, flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'center' }}>
                             <Text variant='titleMedium' style={{ fontWeight: '800', color: colors.background }}>-3.50 USD</Text>
                             <Text variant='labelSmall' style={{ color: colors.background }}>Our free(included)</Text>
                         </View>

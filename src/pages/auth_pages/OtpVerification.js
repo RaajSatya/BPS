@@ -6,7 +6,7 @@ import AppButton from '../../components/general/AppButton'
 import { heightPercentageToDP, widthPercentageToDP } from 'react-native-responsive-screen'
 import OTPInputView from '@twotalltotems/react-native-otp-input'
 export default function OtpVerification({ navigation }) {
-    const { colors, mainPadding } = useTheme()
+    const { colors, spacing } = useTheme()
     const [Phone, setPhone] = useState('9695949392')
     const [code, setCode] = useState('123456')
     function onOtpVerificationHandler() {
@@ -36,16 +36,16 @@ export default function OtpVerification({ navigation }) {
     });
 
     return (
-        <View style={{ flex: 1, paddingHorizontal: mainPadding }} >
+        <View style={{ flex: 1, paddingHorizontal: spacing.sm }} >
             <IconButton icon={'arrow-left'}
                 iconColor={colors.primary}
                 onPress={() => navigation.goBack()}
                 mode='contained'
                 style={{ margin: 0, padding: 0, marginTop: StatusBar.currentHeight }}
             />
-            <View style={{ flex: 1, rowGap: mainPadding * 2, justifyContent: "center" }}>
+            <View style={{ flex: 1, rowGap: spacing.sm, justifyContent: "center" }}>
                 <Text style={{ color: colors.primary }} variant='headlineLarge'>Otp Verification</Text>
-                <View style={{ rowGap: mainPadding }}>
+                <View style={{ rowGap: spacing.sm }}>
                     <Text style={{ color: colors.primary }} variant='bodySmall'>You will be notified with an OTP !!</Text>
 
                     <AppInputField
@@ -61,7 +61,7 @@ export default function OtpVerification({ navigation }) {
 
                 </View>
             </View>
-            <View style={{ flex: 1, rowGap: mainPadding, justifyContent: 'center' }}>
+            <View style={{ flex: 1, rowGap: spacing.sm, justifyContent: 'center' }}>
                 <AppButton
                     label={'Next'}
                     onPress={onOtpVerificationHandler}

@@ -12,7 +12,7 @@ export default function InputOtp({ navigation }) {
         setUserAuthInfo,
         userSignIn,
         userLogout } = useContext(AuthContext)
-    const { colors, mainPadding } = useTheme()
+    const { colors, spacing } = useTheme()
     const [Phone, setPhone] = useState('9695949392')
     const [pin, setPin] = useState('');
 
@@ -46,16 +46,16 @@ export default function InputOtp({ navigation }) {
 
 
     return (
-        <View style={{ flex: 1, paddingHorizontal: mainPadding }} >
+        <View style={{ flex: 1, paddingHorizontal: spacing }} >
             <IconButton icon={'arrow-left'}
                 iconColor={colors.primary}
                 onPress={() => navigation.goBack()}
                 mode='contained'
                 style={{ margin: 0, padding: 0, marginTop: StatusBar.currentHeight }}
             />
-            <View style={{ flex: 1, rowGap: mainPadding * 2, justifyContent: "center" }}>
+            <View style={{ flex: 1, rowGap: spacing.sm, justifyContent: "center" }}>
                 <Text style={{ color: colors.primary }} variant='headlineLarge'>Otp Verification</Text>
-                <View style={{ rowGap: mainPadding }}>
+                <View style={{ rowGap: spacing }}>
                     <Text style={{ color: colors.primary }} variant='bodySmall'>You have received a 6-digit OTP on  XXXXXXX149</Text>
                     {/* <AppInputField
                         labelText={'Enter OTP here'}
@@ -75,7 +75,7 @@ export default function InputOtp({ navigation }) {
                         codeInputHighlightStyle={styles.underlineStyleHighLighted}
                     />
 
-                    <View style={{ rowGap: mainPadding, }}>
+                    <View style={{ rowGap: spacing.sm, }}>
                         <View style={{ flexDirection: 'row', justifyContent: "space-between", alignItems: 'center' }}>
                             <Text style={{ color: colors.primary }} variant='bodySmall'>Didn't received the OTP ? Resend</Text>
                             <Text style={{ color: colors.primary }} variant='bodySmall'> <MaterialCommunityIcons name='timer-outline' /> 120 sec</Text>
@@ -84,7 +84,7 @@ export default function InputOtp({ navigation }) {
                     </View>
                 </View>
             </View>
-            <View style={{ flex: 1, rowGap: mainPadding, justifyContent: 'center' }}>
+            <View style={{ flex: 1, rowGap: spacing.sm, justifyContent: 'center' }}>
                 <AppButton
                     label={'Next'}
                     onPress={onOtpVerificationHandler}

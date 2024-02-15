@@ -35,10 +35,10 @@ export default function MainRouter() {
 
     return (
         <NavigationContainer>
-            {UserAuthInfo ?
-                //  <DashboardRouter /> 
-                <DriverRouter />
-                : <PublicRouter />}
+            {UserAuthInfo == "User" ?
+                <DashboardRouter /> : UserAuthInfo == "Driver" ?
+                    <DriverRouter />
+                    : <PublicRouter />}
         </NavigationContainer>
     )
 }
