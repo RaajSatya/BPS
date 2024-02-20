@@ -23,9 +23,30 @@ export default function Profile() {
 
             <View style={{ rowGap: spacing.sm }}>
                 <Text style={{ textAlign: "center", color: colors.primary }} variant='headlineMedium'>Profile</Text>
-                <View style={{ alignSelf: 'center', borderWidth: 2, backgroundColor: colors.secondary, justifyContent: 'center', alignItems: 'center', borderColor: colors.primary, borderRadius: heightPercentageToDP(16), height: heightPercentageToDP(16), width: widthPercentageToDP(32) }}>
-                    <Image style={{ alignSelf: 'center', height: heightPercentageToDP(15), width: widthPercentageToDP(30) }} source={require('../../../assets/images/icons/head.png')} />
-                    <IconButton onPress={() => navigation.navigate('EditProfile')} size={spacing.sm} style={{ position: 'absolute', bottom: -10, right: 0 }} mode='contained' icon={'pencil'} />
+                <View style={{
+                    alignSelf: 'center',
+                }}>
+
+                    <TouchableRipple
+                        onPress={() => navigation.navigate('Profile')}
+                    >
+                        <Avatar.Image
+                            style={{
+                                backgroundColor: colors.elevation.level2,
+                                borderWidth: 2,
+                                borderColor: colors.primary,
+                                height: widthPercentageToDP(30),
+                                borderRadius: heightPercentageToDP(15),
+                                width: heightPercentageToDP(15),
+                                justifyContent: 'center',
+                                alignItems: 'center'
+                            }}
+                            size={widthPercentageToDP(25)}
+                            source={require('../../../assets/images/icons/head.png')}
+                        />
+                    </TouchableRipple>
+
+                    {/* <IconButton onPress={() => navigation.navigate('EditProfile')} size={spacing.sm} style={{ position: 'absolute', bottom: -10, right: 0 }} mode='contained' icon={'pencil'} /> */}
                 </View>
                 {/* <Image style={{ alignSelf: 'center' }}  /> */}
                 <AppInputField
@@ -40,7 +61,11 @@ export default function Profile() {
                     labelText={'Email'}
                     value={'Satyaxcode@gmail.com'}
                 />
-                <AppButton label={'Edit'} />
+                <AppButton label={'Edit'}
+                    ButtonContentStyle={{
+                        paddingVertical: spacing.xs
+                    }}
+                />
                 <Text variant='bodyLarge' style={{ textAlign: 'center', color: colors.primary, fontWeight: "800" }}>Change Mobile Number</Text>
                 <Text onPress={() => navigation.navigate('ChangePassword')} variant='bodyLarge' style={{ textAlign: 'center', color: colors.primary, fontWeight: "800" }}>Change Password</Text>
             </View>

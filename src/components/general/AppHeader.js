@@ -17,9 +17,22 @@ export default function AppHeader({ onPress }) {
                 mode='contained'
                 style={{ margin: 0, padding: 0 }}
             />
-            <TouchableRipple onPress={() => navigation.navigate('Profile')}>
-                <Image
-                    style={{ width: widthPercentageToDP(8), height: heightPercentageToDP(4) }}
+
+            <TouchableRipple
+                onPress={() => navigation.navigate('Profile')}
+            >
+                <Avatar.Image
+                    style={{
+                        backgroundColor: colors.elevation.level2,
+                        borderWidth: 2,
+                        borderColor: colors.scrim,
+                        height: widthPercentageToDP(10),
+                        borderRadius: heightPercentageToDP(5),
+                        width: heightPercentageToDP(5),
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                    }}
+                    size={widthPercentageToDP(8)}
                     source={require('../../assets/images/icons/head.png')}
                 />
             </TouchableRipple>

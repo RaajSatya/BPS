@@ -83,6 +83,10 @@ const Login = ({ navigation }) => {
                             onPress={onLoginHandler}
                             loading={LoginLoading ? true : false}
                             disabled={LoginLoading ? true : false}
+                            // ButtonStyle={{ marginTop: spacing.lg }}
+                            ButtonContentStyle={{
+                                paddingVertical: spacing.xs
+                            }}
                         />
                         <View style={{ justifyContent: 'center', flexDirection: 'row', columnGap: heightPercentageToDP(0.5), alignItems: 'center' }}>
                             <Text style={{ color: colors.primary }} variant='bodyMedium' >Don't have an account?</Text>

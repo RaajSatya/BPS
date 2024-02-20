@@ -109,7 +109,11 @@ export default function BookServices() {
                         />
                     </View>
                 </View>
-                <AppButton label={'Submit'} />
+                <AppButton label={'Submit'}
+                    ButtonContentStyle={{
+                        paddingVertical: spacing.xs
+                    }}
+                />
                 {/* <View style={{ flexDirection: "row", justifyContent: "center", alignItems: 'center', columnGap: 5 }}>
                     <Text variant='bodyLarge' style={{ textAlign: 'center', color: colors.primary }}>Already have an account</Text>
                     <Text onPress={() => navigation.navigate('Login')} variant='bodyLarge' style={{ textAlign: 'center', color: colors.primary, fontWeight: "800" }}>Login</Text>

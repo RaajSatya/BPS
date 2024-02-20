@@ -19,53 +19,54 @@ export default function MapDetails() {
                 <DriverAppBar />
             </GradientBackground>
             <View style={{ flex: 1, padding: spacing.sm }}>
+
                 <Card>
                     <Card.Content style={{ rowGap: spacing.sm }}>
-                        <View style={{ flexDirection: "row", justifyContent: 'space-between', alignItems: 'center' }}>
-                            <Text variant='titleSmall'>Booking ID : #1234</Text>
-                            {/* <TouchableRipple style={{ backgroundColor: colors.elevation.level2, borderRadius: roundness }} onPress={() => navigation.navigate('PickedUpDetails')}>
+                        <ScrollView contentContainerStyle={{ rowGap: spacing.sm }}>
+                            <View style={{ flexDirection: "row", justifyContent: 'space-between', alignItems: 'center' }}>
+                                <Text variant='titleSmall'>Booking ID : #1234</Text>
+                                {/* <TouchableRipple style={{ backgroundColor: colors.elevation.level2, borderRadius: roundness }} onPress={() => navigation.navigate('PickedUpDetails')}>
                                 <View style={{ padding: spacing.xs, borderRadius: roundness, flexDirection: "row", columnGap: spacing.xs, alignItems: 'center' }}>
                                     <Text>Details</Text>
                                     <Icon source={'arrow-right'} size={spacing.sm} />
                                 </View>
                             </TouchableRipple> */}
-                        </View>
-                        <TouchableRipple style={{ justifyContent: 'center', flexDirection: 'row', borderRadius: roundness, padding: spacing.sm, backgroundColor: colors.primaryContainer }}>
-                            <Image source={require('../../assets/images/icons/lgMap.png')} />
-                        </TouchableRipple>
-                        <View style={{ flexDirection: "row", justifyContent: 'space-between', alignItems: 'center' }}>
-                            <Text style={{}} variant='titleSmall'>Time left for Pick-up</Text>
-                            <Text style={{}} variant='titleSmall'>15 : 30 minutes</Text>
-                        </View>
-                        <ScrollView style={{ height: 200 }} contentContainerStyle={{ rowGap: spacing.sm }}>
-
-                            <AppInputField
-                                labelText={'Contact Person'}
-                                // LeftContent={<Text variant='bodyMedium' style={{ color: colors.background }}>+91</Text>}
-                                value={ContactPerson}
-                                onChangeText={(val) => setContactPerson(val)}
-                            // keyboardType='email-address'
-                            />
-                            <AppInputField
-                                labelText={'Contact Number'}
-                                LeftContent={<Text variant='bodyMedium' style={{ color: colors.background }}>+91</Text>}
-                                value={ContactNumber}
-                                onChangeText={(val) => setContactNumber(val)}
-                            // keyboardType='email-address'
-                            />
-                            <View style={{ rowGap: spacing.sm }} >
-                                <Text variant='bodyMedium' style={{ color: colors.primary }}>Digital Signature</Text>
-                                <View style={{ borderRadius: roundness, backgroundColor: colors.primary, height: heightPercentageToDP(20) }}>
+                            </View>
+                            <TouchableRipple style={{ justifyContent: 'center', flexDirection: 'row', borderRadius: roundness, padding: spacing.sm, backgroundColor: colors.primaryContainer }}>
+                                <Image source={require('../../assets/images/icons/lgMap.png')} />
+                            </TouchableRipple>
+                            <View style={{ flexDirection: "row", justifyContent: 'space-between', alignItems: 'center' }}>
+                                <Text style={{}} variant='titleSmall'>Time left for Pick-up</Text>
+                                <Text style={{}} variant='titleSmall'>15 : 30 minutes</Text>
+                            </View>
+                            <View contentContainerStyle={{ rowGap: spacing.sm }}>
+                                <AppInputField
+                                    labelText={'Contact Person'}
+                                    // LeftContent={<Text variant='bodyMedium' style={{ color: colors.background }}>+91</Text>}
+                                    value={ContactPerson}
+                                    onChangeText={(val) => setContactPerson(val)}
+                                // keyboardType='email-address'
+                                />
+                                <AppInputField
+                                    labelText={'Contact Number'}
+                                    LeftContent={<Text variant='bodyMedium' style={{ color: colors.background }}>+91</Text>}
+                                    value={ContactNumber}
+                                    onChangeText={(val) => setContactNumber(val)}
+                                // keyboardType='email-address'
+                                />
+                                <View style={{ rowGap: spacing.sm }} >
+                                    <Text variant='bodyMedium' style={{ color: colors.primary }}>Digital Signature</Text>
+                                    <View style={{ borderRadius: roundness, backgroundColor: colors.primary, height: heightPercentageToDP(20) }}>
+                                    </View>
                                 </View>
                             </View>
+                            <AppButton
+                                onPress={() => Alert.alert('nothing')}
+                                ButtonStyle={{}}
+                                ButtonContentStyle={{ paddingVertical: heightPercentageToDP(0.5) }}
+                                label={'Done'}
+                            />
                         </ScrollView>
-                        <AppButton
-                            onPress={() => Alert.alert('nothing')}
-                            ButtonStyle={{}}
-                            ButtonContentStyle={{ paddingVertical: heightPercentageToDP(0.5) }}
-                            label={'Done'}
-                        />
-
                     </Card.Content>
                 </Card>
             </View>

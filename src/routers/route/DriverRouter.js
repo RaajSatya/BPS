@@ -11,6 +11,7 @@ import AvailableDelivery from '../../pages/driver_pages/AvailableDelivery'
 import StartPickup from '../../pages/driver_pages/StartPickup'
 import PickedUpDetails from '../../pages/driver_pages/PickedUpDetails'
 import MapDetails from '../../pages/driver_pages/MapDetails'
+import HistoryDetails from '../../pages/driver_pages/HistoryDetails'
 
 export default function DriverRouter() {
     const Stack = createNativeStackNavigator()
@@ -41,6 +42,7 @@ export default function DriverRouter() {
             <Stack.Screen name='StartPickup' options={{ headerShown: false }} component={StartPickup} />
             <Stack.Screen name='PickedUpDetails' options={{ headerShown: false }} component={PickedUpDetails} />
             <Stack.Screen name='MapDetails' options={{ headerShown: false }} component={MapDetails} />
+            <Stack.Screen name='HistoryDetails' options={{ headerShown: false }} component={HistoryDetails} />
 
         </Stack.Navigator>
     )
